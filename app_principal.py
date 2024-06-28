@@ -222,3 +222,11 @@ fig_temp.update_layout(title='Predicción de Temperatura Futura', xaxis_title='F
 st.plotly_chart(fig_prod, use_container_width=True)
 st.plotly_chart(fig_pres, use_container_width=True)
 st.plotly_chart(fig_temp, use_container_width=True)
+
+
+# Aviso de derechos de autor
+st.sidebar.markdown("""
+    ---
+    © 2024. Todos los derechos reservados.
+    Creado por jahoperi.
+""")
