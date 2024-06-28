@@ -63,6 +63,28 @@ def predecir_variables(datos, modelo_prod, modelo_pres, modelo_temp, num_filas):
 # Título de la aplicación
 st.title('Predicción de Producción, Presión y Temperatura Futura para PEMEX')
 
+# Sidebar con información de Ayuda
+st.sidebar.title('Ayuda')
+st.sidebar.markdown("""
+Esta aplicación de Streamlit, titulada "Predicción de Producción, Presión y Temperatura Futura para PEMEX", realiza lo siguiente:
+
+- **Generación de Datos Aleatorios**: Permite al usuario especificar el número de filas de datos aleatorios de producción, presión y temperatura a generar.
+
+- **Análisis de Correlación**: Muestra una matriz de correlación entre la producción, presión y temperatura generadas aleatoriamente.
+
+- **Filtrado de Datos**: Permite al usuario filtrar los datos generados por fecha de inicio y fecha de fin.
+
+- **Selección de Modelos**: Permite al usuario seleccionar entre varios modelos de regresión para prever la producción, presión y temperatura futura. Los modelos disponibles son Regresión Lineal, Árbol de Decisión, Random Forest y Regresión Ridge.
+
+- **Visualización de Predicciones**: Muestra las predicciones de producción, presión y temperatura futura para cada modelo seleccionado, comparándolas con los datos actuales.
+
+- **Métricas de Rendimiento**: Muestra las métricas de rendimiento (MSE y R²) para cada modelo en la predicción de producción, presión y temperatura.
+
+- **Visualización Interactiva con Plotly**: Presenta gráficos interactivos con Plotly que muestran la producción, presión y temperatura actuales y predichas a lo largo del tiempo, para cada modelo seleccionado.
+
+Esta aplicación es útil para prever y comparar diferentes escenarios futuros de producción, presión y temperatura en el contexto de operaciones de PEMEX, utilizando modelos de machine learning comúnmente aplicados en predicciones de series temporales.
+""")
+
 # Generar datos aleatorios y mostrar tabla
 num_filas = st.slider('Número de Filas a Generar', min_value=10, max_value=1000, value=100)
 datos = generar_datos_aleatorios(num_filas)
